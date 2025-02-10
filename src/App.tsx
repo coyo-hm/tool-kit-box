@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "@routes/home/page";
 import PasswordGeneratorPage from "@routes/password-generator/page";
-import Layout from "@components/Layout.tsx";
+import Layout from "@components/Layout/layout.css.ts";
 import StarRatingPage from "@routes/star-rating/page";
 import AppProvider from "@src/providers/AppProvider.tsx";
 
