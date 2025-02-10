@@ -1,21 +1,6 @@
 import { useEffect, useState } from "react";
-import { css, keyframes } from "@emotion/react";
 import useWindowSize from "@src/hooks/useWindowSize.ts";
-
-const Twinkle = keyframes`
-    0% {
-        opacity: 0;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.2);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(1);
-    }
-`;
+import { backgroundEffectStyle, backgroundStyle } from "./layout.css.ts";
 
 const Background = () => {
   const [stars, setStars] = useState<{ id: number; x: number; y: number; delay: number; duration: number }[]>([]);
@@ -34,28 +19,11 @@ const Background = () => {
   }, [windowSize]);
 
   return (
-    <div
-      css={css`
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        background: radial-gradient(circle at bottom, #001c42 10%, #000b1d 50%, #000000 90%);
-      `}
-    >
+    <div className={backgroundStyle}>
       {stars.map(star => (
         <div
           key={star.id}
-          css={css`
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: white;
-            border-radius: 50%;
-            opacity: 0;
-            animation: ${Twinkle} 3s infinite alternate;
-            z-index: 0;
-          `}
+          className={backgroundEffectStyle}
           style={{
             left: `${star.x}px`,
             top: `${star.y}px`,
