@@ -1,6 +1,6 @@
-import colors from "@styles/colors.css.ts";
 import { recipe } from "@vanilla-extract/recipes";
 import { themeContract } from "@styles/theme.css.ts";
+import vars from "@styles/vars.css.ts";
 
 export const buttonStyle = recipe({
   base: {
@@ -31,7 +31,7 @@ export const buttonStyle = recipe({
         color: "#000000",
         selectors: {
           "&:hover": {
-            backgroundColor: colors["primary-yellow"],
+            backgroundColor: vars.colors.primaryYellow,
             color: "white",
           },
         },
@@ -41,8 +41,8 @@ export const buttonStyle = recipe({
         border: `2px solid ${themeContract.colors.text}`,
         selectors: {
           "&:hover": {
-            borderColor: colors["primary-yellow"],
-            color: colors["primary-yellow"],
+            borderColor: vars.colors.primaryYellow,
+            color:vars.colors.primaryYellow,
           },
         },
       },

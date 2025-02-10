@@ -3,20 +3,24 @@ import { createTheme, createThemeContract, globalStyle } from "@vanilla-extract/
 export const themeContract = createThemeContract({
   colors: {
     text: null,
+    background: null,
   },
 });
 
 export const lightTheme = createTheme(themeContract, {
   colors: {
     text: "#000000",
+    background: "#ffffff",
   },
 });
 export const darkTheme = createTheme(themeContract, {
   colors: {
     text: "#ffffff",
+    background: "#000000",
   },
 });
 
 globalStyle("*, *::after, *::before", {
   color: themeContract.colors.text,
+  // background: themeContract.colors.background,
 });

@@ -25,7 +25,9 @@
     "baseUrl": ".",
     "paths": {
       "@src/*": ["src/*"],
+      "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
+      "@constants/*": ["src/constants/*"],
       "@locales/*": ["src/locales/*"],
       "@routes/*": ["src/routes/*"],
       "@styles/*": ["src/styles/*"]
