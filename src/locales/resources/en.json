@@ -1,6 +1,13 @@
 {
   "password-generator": {
-    "title": "\uD83D\uDD12 PASSWORD GENERATOR \uD83D\uDD12"
+    "title": "\uD83D\uDD12 PASSWORD GENERATOR \uD83D\uDD12",
+    "form": {
+      "config": "Config",
+      "length": "Length"
+    },
+    "button": {
+      "generate": "Generate"
+    }
   },
   "star-rating": {
     "title": "\uD83C\uDF1F STARS RATING ICON \uD83C\uDF1F"
