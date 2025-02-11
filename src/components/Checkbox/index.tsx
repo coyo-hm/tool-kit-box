@@ -1,5 +1,5 @@
 import { ComponentProps, ReactNode } from "react";
-import { container, iconStyle, inputStyle, labelStyle } from "./checkbox.css.ts";
+import { containerStyle, iconStyle, inputStyle, labelStyle } from "./checkbox.css.ts";
 
 interface CheckBoxProps extends Omit<ComponentProps<"input">, "size"> {
   id: string;
@@ -9,7 +9,7 @@ interface CheckBoxProps extends Omit<ComponentProps<"input">, "size"> {
 
 const Checkbox = ({ label, id, size = "md", className = "", ...props }: CheckBoxProps) => {
   return (
-    <div className={`${container} ${className}`}>
+    <div className={`${containerStyle} ${className}`}>
       <input {...props} id={id} type="checkbox" readOnly className={inputStyle} />
       <span className={iconStyle({ size })} />
       {label && (

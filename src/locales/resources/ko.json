@@ -1,6 +1,12 @@
 {
   "password-generator": {
-    "title": "\uD83D\uDD12 PASSWORD GENERATOR \uD83D\uDD12"
+    "title": "\uD83D\uDD12 PASSWORD GENERATOR \uD83D\uDD12",
+    "form": {
+      "option": "옵션",
+      "length": "비밀번호 길이",
+      "included_char": "포함되는 글자",
+      "special_char": "특수문자"
+    }
   },
   "star-rating": {
     "title": "\uD83C\uDF1F STARS RATING ICON \uD83C\uDF1F"

@@ -5,12 +5,11 @@ export const mainStyle = style({
   flexDirection: "column",
   width: "100%",
   height: "100vh",
-  overflow: "hidden",
+  overflow: "auto",
 });
 
 export const sectionStyle = style({
   width: "100%",
-  overflow: "auto",
   flex: "1 1 0",
   zIndex: 1,
 });

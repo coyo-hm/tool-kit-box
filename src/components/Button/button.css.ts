@@ -42,7 +42,7 @@ export const buttonStyle = recipe({
         selectors: {
           "&:hover": {
             borderColor: vars.colors.primaryYellow,
-            color:vars.colors.primaryYellow,
+            color: vars.colors.primaryYellow,
           },
         },
       },

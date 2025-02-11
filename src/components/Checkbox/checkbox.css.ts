@@ -2,7 +2,7 @@ import { style } from "@vanilla-extract/css";
 import vars from "@styles/vars.css.ts";
 import { recipe } from "@vanilla-extract/recipes";
 
-export const container = style({
+export const containerStyle = style({
   display: "flex",
   gap: 10,
   cursor: "pointer",

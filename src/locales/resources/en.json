@@ -2,8 +2,13 @@
   "password-generator": {
     "title": "\uD83D\uDD12 PASSWORD GENERATOR \uD83D\uDD12",
     "form": {
-      "config": "Config",
-      "length": "Length"
+      "option": "option",
+      "length": "LENGTH",
+      "included_char": "INCLUDED CHARACTERS",
+      "is_included_num": "INCLUDED NUMBERS",
+      "is_included_upper": "INCLUDED UPPERCASE",
+      "is_included_lower": "INCLUDED LOWERCASE",
+      "is_included_sym": "INCLUDED SYMBOLS"
     },
     "button": {
       "generate": "Generate"
