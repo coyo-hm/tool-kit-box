@@ -26,7 +26,7 @@ export const iconStyle = recipe({
       [`input:checked + &`]: {
         borderWidth: 4,
         borderColor: vars.colors.primaryGreen,
-        background: `${vars.colors.primaryGreen} url('../../assets/checkmark.svg') no-repeat`,
+        background: `${vars.colors.primaryGreen} url('/assets/checkmark.svg') no-repeat`,
       },
     },
   },

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Button from "@components/Button";
 import Input from "@components/Input";
-import CopyIcon from "@assets/copy.svg?react";
-import EyeIcon from "@assets/eye.svg?react";
-import EyeClosedIcon from "@assets/eye-closed.svg?react";
+import CopyIcon from "../../../../../public/assets/copy.svg?react";
+import EyeIcon from "../../../../../public/assets/eye.svg?react";
+import EyeClosedIcon from "../../../../../public/assets/eye-closed.svg?react";
 import {
   buttonCopyStyle,
   buttonPasswordStyle,
