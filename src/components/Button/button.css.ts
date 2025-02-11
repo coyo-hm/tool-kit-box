@@ -27,12 +27,25 @@ export const buttonStyle = recipe({
     },
     color: {
       primary: {
+        border: "none",
         backgroundColor: "#FFFFFF",
         color: "#000000",
         selectors: {
           "&:hover": {
             backgroundColor: vars.colors.primaryYellow,
             color: "white",
+          },
+        },
+      },
+      secondary: {
+        border: "none",
+        backgroundColor: vars.colors.primaryYellow,
+        // color: "white",
+        color: themeContract.colors.text,
+        padding: 5,
+        selectors: {
+          "&:hover": {
+            color: themeContract.colors.background,
           },
         },
       },

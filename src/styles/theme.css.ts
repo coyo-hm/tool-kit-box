@@ -24,3 +24,8 @@ globalStyle("*, *::after, *::before", {
   color: themeContract.colors.text,
   // background: themeContract.colors.background,
 });
+
+globalStyle("svg *, svg", {
+  color: "inherit",
+  // background: themeContract.colors.background,
+});

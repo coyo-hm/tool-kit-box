@@ -10,7 +10,7 @@ const HomePage = () => {
   return (
     <div className={linkContainerStyle}>
       <Link to={"/password-generator"}>{t("password-generator.title")}</Link>
-      <Link to={"/star-rating"}>{t("star-rating.title")}</Link>
+      {/*<Link to={"/star-rating"}>{t("star-rating.title")}</Link>*/}
     </div>
   );
 };
