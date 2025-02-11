@@ -21,10 +21,10 @@ const usePasswordGenerator = () => {
     includeSymbols = PasswordGenerator.DEFAULT_CHARS.SYMBOL,
   }: PasswordOptions) => {
     let charPool = "";
-    if (isIncludeLowercase) charPool += PasswordGenerator.DEFAULT_CHARS.NUMBER;
+    if (isIncludeNumbers) charPool += PasswordGenerator.DEFAULT_CHARS.NUMBER;
     if (isIncludeSymbols) charPool += includeSymbols;
     if (isIncludeUppercase) charPool += PasswordGenerator.DEFAULT_CHARS.UPPERCASE;
-    if (isIncludeNumbers) charPool += PasswordGenerator.DEFAULT_CHARS.LOWERCASE;
+    if (isIncludeLowercase) charPool += PasswordGenerator.DEFAULT_CHARS.LOWERCASE;
 
     if (!charPool) return;
 

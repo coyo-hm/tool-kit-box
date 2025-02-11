@@ -26,11 +26,11 @@ export const buttonPasswordStyle = style({
   border: "none",
   color: vars.colors.primaryYellow,
   transition: "all 0.3s ease-in-out",
-  selectors:{
-    [`&:hover`]:{
+  selectors: {
+    [`&:hover`]: {
       color: "black",
-    }
-  }
+    },
+  },
 });
 
 export const buttonCopyStyle = style({
@@ -40,9 +40,9 @@ export const buttonCopyStyle = style({
 
 export const buttonCopyIconStyle = style({
   color: "white",
-  selectors:{
-    [`${buttonCopyStyle}:hover &`]:{
+  selectors: {
+    [`${buttonCopyStyle}:hover &`]: {
       color: "black",
-    }
-  }
-})
+    },
+  },
+});
