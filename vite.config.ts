@@ -6,5 +6,6 @@ import svgr from "vite-plugin-svgr";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/tool-kit-box/",
   plugins: [react(), vanillaExtractPlugin(), tsconfigPaths(), svgr()],
 });
