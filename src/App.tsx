@@ -6,7 +6,7 @@ import PasswordGeneratorPage from "@routes/password-generator/page";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={"/tool-kit-box"}>
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />

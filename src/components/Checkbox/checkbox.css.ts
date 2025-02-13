@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
-import vars from "@styles/vars.css.ts";
 import { recipe } from "@vanilla-extract/recipes";
+import vars from "@styles/vars.css.ts";
 
 export const containerStyle = style({
   display: "flex",
@@ -26,7 +26,7 @@ export const iconStyle = recipe({
       [`input:checked + &`]: {
         borderWidth: 4,
         borderColor: vars.colors.primaryGreen,
-        background: `${vars.colors.primaryGreen} url('src/assets/checkmark.svg') no-repeat`,
+        background: `${vars.colors.primaryGreen} url('/assets/checkmark.svg') no-repeat`,
       },
     },
   },
