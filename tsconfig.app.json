@@ -6,7 +6,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-    "types": ["vite-plugin-svgr/client"],
+//    "types": ["vite-plugin-svgr/client"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -34,5 +34,6 @@
       "@styles/*": ["src/styles/*"]
     }
   },
-  "include": ["src", "svg.d.ts"]
+//  "include": ["src", "svg.d.ts"]
+  "include": ["src"]
 }
