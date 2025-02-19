@@ -1,6 +1,10 @@
+import { ChangeEvent, Dispatch, MouseEvent, SetStateAction, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import PasswordGenerator from "@constants/passwordGenerator.ts";
+import { type PasswordOptions } from "@routes/password-generator/hooks/usePasswordGenerator.ts";
 import Slider from "@components/Slider";
 import Input from "@components/Input";
+import Checkbox from "@components/Checkbox";
 import {
   checkContainerStyle,
   containerStyle,
@@ -10,40 +14,16 @@ import {
   symbolInputStyle,
   titleStyle,
 } from "./passwordOptions.css.ts";
-import PasswordGenerator from "@constants/passwordGenerator.ts";
-import Checkbox from "@components/Checkbox";
-import { ChangeEvent, useEffect, useState } from "react";
 
 interface Props {
-  length: number;
-  setLength: (value: number) => void;
-  isIncludeNumbers: boolean;
-  setIsIncludeNumbers: (value: boolean) => void;
-  isIncludeSymbols: boolean;
-  setIsIncludeSymbols: (value: boolean) => void;
-  isIncludeUppercase: boolean;
-  setIsIncludeUppercase: (value: boolean) => void;
-  isIncludeLowercase: boolean;
-  setIsIncludeLowercase: (value: boolean) => void;
-  includeSymbols: string;
-  setIncludeSymbols: (value: string) => void;
+  passwordOptions: PasswordOptions;
+  setPasswordOptions: Dispatch<SetStateAction<PasswordOptions>>;
 }
 
-const PasswordOptions = ({
-  length,
-  setLength,
-  isIncludeNumbers,
-  setIsIncludeNumbers,
-  isIncludeSymbols,
-  setIsIncludeSymbols,
-  isIncludeUppercase,
-  setIsIncludeUppercase,
-  isIncludeLowercase,
-  setIsIncludeLowercase,
-  includeSymbols,
-  setIncludeSymbols,
-}: Props) => {
+const PasswordOptions = ({ passwordOptions, setPasswordOptions }: Props) => {
   const { t } = useTranslation();
+  const { length, includeSymbols, isIncludeNumbers, isIncludeUppercase, isIncludeLowercase, isIncludeSymbols } =
+    passwordOptions;
   const [isAllChecked, setIsAllChecked] = useState(false);
 
   useEffect(() => {
@@ -67,20 +47,36 @@ const PasswordOptions = ({
 
   const onToggleIsAllChecked = () => {
     const newState = !isAllChecked;
-    setIsIncludeNumbers(newState);
-    setIsIncludeUppercase(newState);
-    setIsIncludeLowercase(newState);
-    setIsIncludeSymbols(newState);
+    setPasswordOptions(prev => ({
+      ...prev,
+      isIncludeNumbers: newState,
+      isIncludeUppercase: newState,
+      isIncludeLowercase: newState,
+      isIncludeSymbols: newState,
+    }));
     setIsAllChecked(newState);
   };
 
   const onChangeSymbols = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    setIncludeSymbols(
-      value
+    setPasswordOptions(prev => ({
+      ...prev,
+      includeSymbols: value
         .split("")
         .reduce((letters, l) => (PasswordGenerator.DEFAULT_CHARS.SYMBOL.includes(l) ? letters + l : letters), ""),
-    );
+    }));
+  };
+
+  const onClickCheckbox = (event: MouseEvent<HTMLInputElement>) => {
+    const target = event.target as HTMLInputElement;
+    if (!target) {
+      return;
+    }
+
+    setPasswordOptions(prev => ({
+      ...prev,
+      [target.id]: target.checked,
+    }));
   };
 
   return (
@@ -94,7 +90,7 @@ const PasswordOptions = ({
           max={PasswordGenerator.NUMBER.MAX}
           step={1}
           value={length}
-          onChange={e => setLength(Number(e.target.value))}
+          onChange={e => setPasswordOptions(prev => ({ ...prev, length: Number(e.target.value) }))}
         />
         <Input value={length} disabled className={lengthInputStyle} />
       </div>
@@ -107,29 +103,29 @@ const PasswordOptions = ({
       />
       <div className={checkContainerStyle}>
         <Checkbox
-          id={"include-numbers"}
+          id={"isIncludeNumbers"}
           label={t("password-generator.form.is_included_num")}
           checked={isIncludeNumbers}
-          onClick={() => setIsIncludeNumbers(!isIncludeNumbers)}
+          onClick={onClickCheckbox}
         />
         <Checkbox
-          id={"include-upper"}
+          id={"isIncludeUppercase"}
           label={t("password-generator.form.is_included_upper")}
           checked={isIncludeUppercase}
-          onClick={() => setIsIncludeUppercase(!isIncludeUppercase)}
+          onClick={onClickCheckbox}
         />
         <Checkbox
-          id={"include-lower"}
+          id={"isIncludeLowercase"}
           label={t("password-generator.form.is_included_lower")}
           checked={isIncludeLowercase}
-          onClick={() => setIsIncludeLowercase(!isIncludeLowercase)}
+          onClick={onClickCheckbox}
         />
         <div className={symbolCheckStyle}>
           <Checkbox
-            id={"include-symbols"}
+            id={"isIncludeSymbols"}
             label={t("password-generator.form.is_included_sym")}
             checked={isIncludeSymbols}
-            onClick={() => setIsIncludeSymbols(!isIncludeSymbols)}
+            onClick={onClickCheckbox}
           />
           <Input value={includeSymbols} styleSize={"sm"} onChange={onChangeSymbols} className={symbolInputStyle} />
         </div>

@@ -12,6 +12,15 @@ export interface PasswordOptions {
 
 const usePasswordGenerator = () => {
   const [password, setPassword] = useState("");
+  const [passwordOptions, setPasswordOptions] = useState<PasswordOptions>({
+    length: PasswordGenerator.NUMBER.DEFAULT,
+    isIncludeNumbers: false,
+    isIncludeSymbols: false,
+    isIncludeUppercase: false,
+    isIncludeLowercase: false,
+    includeSymbols: PasswordGenerator.DEFAULT_CHARS.SYMBOL,
+  });
+
   const generatePassword = ({
     length,
     isIncludeLowercase,
@@ -33,7 +42,7 @@ const usePasswordGenerator = () => {
     );
     setPassword(generatedPassword);
   };
-  return { password, generatePassword };
+  return { password, generatePassword, passwordOptions, setPasswordOptions };
 };
 
 export default usePasswordGenerator;
