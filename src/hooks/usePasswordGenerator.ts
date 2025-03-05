@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PasswordGenerator from "@constants/passwordGenerator";
+import PasswordGenerator from "@constants/passwordGenerator.ts";
 
 export interface PasswordOptions {
   length: number;
@@ -14,10 +14,10 @@ const usePasswordGenerator = () => {
   const [password, setPassword] = useState("");
   const [passwordOptions, setPasswordOptions] = useState<PasswordOptions>({
     length: PasswordGenerator.NUMBER.DEFAULT,
-    isIncludeNumbers: false,
-    isIncludeSymbols: false,
-    isIncludeUppercase: false,
-    isIncludeLowercase: false,
+    isIncludeNumbers: true,
+    isIncludeSymbols: true,
+    isIncludeUppercase: true,
+    isIncludeLowercase: true,
     includeSymbols: PasswordGenerator.DEFAULT_CHARS.SYMBOL,
   });
 

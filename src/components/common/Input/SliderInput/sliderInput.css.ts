@@ -8,10 +8,23 @@ import { themeContract } from "@styles/theme.css.ts";
 // };
 
 export const sliderContainerStyle = style({
+  display: "flex",
+  gap: "1rem",
+  alignItems: "center",
+  // fontSize: "1.5rem",
+  // margin: "2rem 0",
+});
+
+export const inputStyle = style({
   position: "relative",
   width: "100%",
   // height: 16,
   flex: "1 1 0",
+});
+
+export const valueInputStyle = style({
+  textAlign: "center",
+  width: "5rem",
 });
 
 export const sliderStyle = style({

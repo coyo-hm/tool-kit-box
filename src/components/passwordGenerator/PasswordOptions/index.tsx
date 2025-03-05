@@ -1,19 +1,16 @@
 import { ChangeEvent, Dispatch, MouseEvent, SetStateAction, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import PasswordGenerator from "@constants/passwordGenerator.ts";
-import { type PasswordOptions } from "@routes/password-generator/hooks/usePasswordGenerator.ts";
-import Slider from "@components/Slider";
-import Input from "@components/Input";
-import Checkbox from "@components/Checkbox";
+import { type PasswordOptions } from "@hooks/usePasswordGenerator.ts";
+import Checkbox from "@components/common/Checkbox";
 import {
   checkContainerStyle,
   containerStyle,
-  lengthContainerStyle,
-  lengthInputStyle,
   symbolCheckStyle,
   symbolInputStyle,
   titleStyle,
 } from "./passwordOptions.css.ts";
+import { Input, SliderInput } from "@components/common/Input";
 
 interface Props {
   passwordOptions: PasswordOptions;
@@ -82,18 +79,14 @@ const PasswordOptions = ({ passwordOptions, setPasswordOptions }: Props) => {
   return (
     <div className={containerStyle}>
       <h2 className={titleStyle}>⚙️ {t("password-generator.form.option")} ⚙️</h2>
-      <div className={lengthContainerStyle}>
-        <label>{t("password-generator.form.length")}</label>
-        <Slider
-          type="range"
-          min={PasswordGenerator.NUMBER.MIN}
-          max={PasswordGenerator.NUMBER.MAX}
-          step={1}
-          value={length}
-          onChange={e => setPasswordOptions(prev => ({ ...prev, length: Number(e.target.value) }))}
-        />
-        <Input value={length} disabled className={lengthInputStyle} />
-      </div>
+      <SliderInput
+        id={"passwordLength"}
+        label={t("password-generator.form.length")}
+        min={PasswordGenerator.NUMBER.MIN}
+        max={PasswordGenerator.NUMBER.MAX}
+        value={length}
+        onChange={e => setPasswordOptions(prev => ({ ...prev, length: Number(e.target.value) }))}
+      />
       <Checkbox
         id={"all-check"}
         label={t("password-generator.form.included_char")}

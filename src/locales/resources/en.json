@@ -15,6 +15,17 @@
     }
   },
   "star-rating": {
-    "title": "\uD83C\uDF1F STARS RATING ICON \uD83C\uDF1F"
+    "title": "\uD83C\uDF1F STARS RATING ICON \uD83C\uDF1F",
+    "options": {
+      "title": "option",
+      "maxScore": "\uD83C\uDF1F MAX SCORE",
+      "currentScore": "\uD83C\uDFAF CURRENT SCORE",
+      "filledColor": "\uD83C\uDFA8 FILLED COLOR",
+      "unfilledColor": "\uD83C\uDFA8 UNFILLED COLOR",
+      "starSize": "\uD83D\uDCCF STAR SIZE"
+    },
+    "button": {
+      "download": "⬇\uFE0F PNG DOWNLOAD"
+    }
   }
 }

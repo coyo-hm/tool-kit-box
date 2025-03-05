@@ -1,6 +1,5 @@
 import { useState } from "react";
-import Button from "@components/Button";
-import Input from "@components/Input";
+import Button from "@components/common/Button";
 import CopyIcon from "@assets/copy.svg?react";
 import EyeIcon from "@assets/eye.svg?react";
 import EyeClosedIcon from "@assets/eye-closed.svg?react";
@@ -11,6 +10,7 @@ import {
   inputStyle,
   outputStyle,
 } from "./passwordOutput.css.ts";
+import { Input } from "@components/common/Input";
 
 interface Props {
   password: string;

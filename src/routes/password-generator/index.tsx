@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
+import usePasswordGenerator from "@hooks/usePasswordGenerator.ts";
+import Button from "@components/common/Button";
+import PasswordOptions from "@components/passwordGenerator/PasswordOptions";
+import PasswordOutput from "@components/passwordGenerator/PasswordOutput";
 import { formStyle } from "./index.css.ts";
-import Button from "@components/Button";
-import usePasswordGenerator from "../hooks/usePasswordGenerator.ts";
-import PasswordOptions from "../components/PasswordOptions";
-import PasswordOutput from "../components/PasswordOutput";
 
 const PasswordGeneratorPage = () => {
   const { t } = useTranslation();

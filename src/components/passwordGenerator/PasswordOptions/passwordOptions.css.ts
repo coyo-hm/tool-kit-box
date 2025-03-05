@@ -5,8 +5,11 @@ export const containerStyle = style({
   padding: "2rem",
   borderRadius: vars.borderRadius,
   backgroundColor: "rgba(0, 0, 0, 0.6)",
-  fontSize: "1.2rem",
   fontWeight: 700,
+  fontSize: "1.5rem",
+  display: "flex",
+  flexDirection: "column",
+  gap: "1rem",
 });
 
 export const titleStyle = style({
@@ -18,18 +21,6 @@ export const titleStyle = style({
   letterSpacing: 1,
 });
 
-export const lengthContainerStyle = style({
-  display: "flex",
-  gap: "1rem",
-  alignItems: "center",
-  fontSize: "1.5rem",
-  margin: "2rem 0",
-});
-
-export const lengthInputStyle = style({
-  width: "4rem",
-  textAlign: "center",
-});
 export const checkContainerStyle = style({
   padding: "1rem 0",
   display: "flex",
