@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Layout from "@components/Layout";
-import HomePage from "@routes/home/page";
-import PasswordGeneratorPage from "@routes/password-generator/page";
-// import StarRatingPage from "@routes/star-rating/page";
+import Layout from "src/components/common/Layout";
+import HomePage from "@routes/home";
+import PasswordGeneratorPage from "@routes/password-generator";
+import StarRatingPage from "@routes/star-rating";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/password-generator" element={<PasswordGeneratorPage />} />
-          {/*<Route path="/star-rating" element={<StarRatingPage />} />*/}
+          <Route path="/star-rating" element={<StarRatingPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>

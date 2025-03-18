@@ -1,4 +1,5 @@
 import { createTheme, createThemeContract, globalStyle } from "@vanilla-extract/css";
+import { textFont } from "@styles/text.css.ts";
 
 export const themeContract = createThemeContract({
   colors: {
@@ -21,6 +22,7 @@ export const darkTheme = createTheme(themeContract, {
 });
 
 globalStyle("*, *::after, *::before", {
+  fontFamily: textFont,
   color: themeContract.colors.text,
   // background: themeContract.colors.background,
 });
