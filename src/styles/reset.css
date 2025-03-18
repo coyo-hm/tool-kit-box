@@ -1,3 +1,5 @@
+@import url("../../public/assets/fonts/Inter/inter.css");
+
 /* box-sizing 규칙을 명시합니다. */
 *,
 *::before,
@@ -5,6 +7,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /*font-family: Inter, "Apple SD Gothic Neo", sans-serif;*/
 }
 
 /* 폰트 크기의 팽창을 방지합니다. */
