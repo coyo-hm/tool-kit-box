@@ -1,4 +1,4 @@
-import { ComponentProps, ReactNode } from "react";
+import { ComponentProps, memo, ReactNode } from "react";
 import { containerStyle, iconStyle, inputStyle, labelStyle } from "./checkbox.css.ts";
 
 interface CheckBoxProps extends Omit<ComponentProps<"input">, "size"> {
@@ -7,7 +7,7 @@ interface CheckBoxProps extends Omit<ComponentProps<"input">, "size"> {
   size?: "sm" | "md" | "lg" | "xl";
 }
 
-const Checkbox = ({ label, id, size = "md", className = "", ...props }: CheckBoxProps) => {
+const Checkbox = memo(({ label, id, size = "md", className = "", ...props }: CheckBoxProps) => {
   return (
     <label htmlFor={id} className={`${containerStyle} ${className}`}>
       <input {...props} id={id} type="checkbox" readOnly className={inputStyle} />
@@ -15,5 +15,8 @@ const Checkbox = ({ label, id, size = "md", className = "", ...props }: CheckBox
       {label && <span className={labelStyle({ size })}>{label}</span>}
     </label>
   );
-};
+});
+
+Checkbox.displayName = "Checkbox";
+
 export default Checkbox;

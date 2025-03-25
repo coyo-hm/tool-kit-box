@@ -1,4 +1,4 @@
-import { ComponentProps, ReactNode, useEffect, useState } from "react";
+import { ComponentProps, memo, ReactNode, useEffect, useState } from "react";
 import { colorPickerStyle, containerStyle, hexInputStyle } from "./colorInput.css.ts";
 import { Input } from "@components/common/Input";
 
@@ -6,7 +6,7 @@ interface ColorInputProps extends ComponentProps<"input"> {
   label?: ReactNode;
 }
 
-const ColorInput = ({ label, value, ...props }: ColorInputProps) => {
+const ColorInput = memo(({ label, value, ...props }: ColorInputProps) => {
   const [color, setColor] = useState("#000000");
 
   useEffect(() => {
@@ -28,6 +28,8 @@ const ColorInput = ({ label, value, ...props }: ColorInputProps) => {
       </div>
     </div>
   );
-};
+});
+
+ColorInput.displayName = "ColorInput";
 
 export default ColorInput;

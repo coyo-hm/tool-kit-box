@@ -1,4 +1,4 @@
-import { ComponentProps } from "react";
+import { ComponentProps, memo } from "react";
 import { buttonStyle } from "./button.css.ts";
 
 interface ButtonProps extends ComponentProps<"button"> {
@@ -6,7 +6,10 @@ interface ButtonProps extends ComponentProps<"button"> {
   color?: "primary" | "secondary" | "outline";
 }
 
-const Button = ({ size = "md", color = "primary", className = "", ...props }: ButtonProps) => (
+const Button = memo(({ size = "md", color = "primary", className = "", ...props }: ButtonProps) => (
   <button className={`${buttonStyle({ size, color })} ${className}`} {...props} />
-);
+));
+
+Button.displayName = "Button";
+
 export default Button;

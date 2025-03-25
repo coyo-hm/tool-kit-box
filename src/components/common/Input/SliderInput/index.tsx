@@ -1,4 +1,4 @@
-import { ComponentProps, ReactNode, useRef } from "react";
+import { ComponentProps, memo, ReactNode, useRef } from "react";
 import {
   inputStyle,
   sliderContainerStyle,
@@ -14,7 +14,7 @@ interface SliderInputProps extends ComponentProps<"input"> {
   isShowValue?: boolean;
 }
 
-const SliderInput = ({ className = "", label, id, isShowValue = true, step, ...props }: SliderInputProps) => {
+const SliderInput = memo(({ className = "", label, id, isShowValue = true, step, ...props }: SliderInputProps) => {
   const min = Number(props.min ?? 0);
   const max = Number(props.max ?? 1);
   const sliderRef = useRef<HTMLInputElement>(null);
@@ -47,6 +47,8 @@ const SliderInput = ({ className = "", label, id, isShowValue = true, step, ...p
       {isShowValue && <Input value={props.value} disabled className={valueInputStyle} />}
     </div>
   );
-};
+});
+
+SliderInput.displayName = "SliderInput";
 
 export default SliderInput;
