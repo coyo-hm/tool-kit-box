@@ -1,14 +1,26 @@
 import { keyframes, style } from "@vanilla-extract/css";
 
-export const mainStyle = style({
-  display: "flex",
-  flexDirection: "column",
+export const layoutStyle = style({
   width: "100%",
   height: "100vh",
   overflow: "auto",
 });
 
-export const sectionStyle = style({
+export const pageStyle = style({
+  display: "flex",
+  flexDirection: "column",
+  width: "100%",
+  height: "100%",
+
+  "@media": {
+    "(min-width: 1200px)": {
+      maxWidth: "1000px",
+      margin: "0 auto",
+    },
+  },
+});
+
+export const contentStyle = style({
   width: "100%",
   flex: "1 1 0",
   zIndex: 1,
