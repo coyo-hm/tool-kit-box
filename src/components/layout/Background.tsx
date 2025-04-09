@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import useWindowSize from "@src/hooks/useWindowSize.ts";
-import { backgroundEffectStyle, backgroundStyle } from "./layout.css.ts";
+import useWindowSize from "@/hooks/useWindowSize";
+import { backgroundEffectStyle, backgroundStyle } from "@/components/layout/layout.css";
 
 const Background = () => {
   const [stars, setStars] = useState<{ id: number; x: number; y: number; delay: number; duration: number }[]>([]);
