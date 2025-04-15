@@ -1,0 +1,17 @@
+{
+  "name": "tool-kit-box",
+  "description": "A collection of my favorite tools",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
