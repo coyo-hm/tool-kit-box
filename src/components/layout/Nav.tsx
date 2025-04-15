@@ -1,19 +1,19 @@
-import { Link, useLocation } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import { navStyle } from "./layout.css.ts";
-import CONSTANT from "@src/constants";
+import { navStyle } from "./layout.css";
+import CONSTANT from "@/constants";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
 
 const Nav = () => {
-  const { pathname } = useLocation();
-  const { t } = useTranslation();
+  const pathname = usePathname();
+  const t = useTranslations();
 
   return (
     <nav className={navStyle}>
-      <Link to="/">{CONSTANT.TITLE}</Link>
+      <Link href="/">{CONSTANT.TITLE}</Link>
       {pathname !== "/" && (
         <>
           <span>/</span>
-          <Link to={pathname}>{t(`${pathname.slice(1)}.title`)}</Link>
+          <Link href={pathname}>{t(`${pathname.slice(1)}.title`)}</Link>
         </>
       )}
     </nav>

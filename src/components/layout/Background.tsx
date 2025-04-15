@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import useWindowSize from "@/hooks/useWindowSize";
 import { backgroundEffectStyle, backgroundStyle } from "@/components/layout/layout.css";

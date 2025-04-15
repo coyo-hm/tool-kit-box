@@ -1,5 +1,5 @@
 import { ComponentProps, memo } from "react";
-import { buttonStyle } from "./button.css.ts";
+import { buttonStyle } from "./button.css";
 
 interface ButtonProps extends ComponentProps<"button"> {
   size?: "sm" | "md" | "lg" | "xl";

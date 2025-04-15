@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  createContext,
-  PropsWithChildren,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { createContext, PropsWithChildren, useContext, useEffect, useState } from "react";
 import { darkTheme, lightTheme } from "@/styles/theme.css";
 import { whFull } from "@/styles/vars.css";
 
@@ -30,10 +24,7 @@ export default function ThemeProvider({ children }: PropsWithChildren) {
     try {
       setMounted(true);
       const savedTheme = localStorage.getItem("theme") as Theme;
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 
       const initialTheme = savedTheme || systemTheme;
       setTheme(initialTheme);
@@ -59,11 +50,7 @@ export default function ThemeProvider({ children }: PropsWithChildren) {
 
   return (
     <ThemeContext.Provider value={value}>
-      {mounted ? (
-        <div className={`${theme === "light" ? lightTheme : darkTheme} ${whFull}`}>
-          {children}
-        </div>
-      ) : null}
+      {mounted ? <div className={`${theme === "light" ? lightTheme : darkTheme} ${whFull}`}>{children}</div> : null}
     </ThemeContext.Provider>
   );
 }

@@ -1,16 +1,11 @@
-"use client";
-
 import { PropsWithChildren } from "react";
-import { RecoilProvider } from "@/providers/RecoilProvider";
-import { QueryProvider } from "@/providers/QueryProvider";
 import ThemeProvider from "@/providers/ThemeProvider";
+import IntlProvider from "@/providers/IntlProvider";
 
 export default function Providers({ children }: PropsWithChildren) {
   return (
-    <RecoilProvider>
-      <QueryProvider>
-        <ThemeProvider>{children}</ThemeProvider>
-      </QueryProvider>
-    </RecoilProvider>
+    <IntlProvider>
+      <ThemeProvider>{children}</ThemeProvider>
+    </IntlProvider>
   );
 }

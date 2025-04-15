@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
-import vars from "@styles/vars.css.ts";
-import { themeContract } from "@styles/theme.css.ts";
+import { themeContract } from "@/styles/theme.css";
+import vars from "@/styles/vars.css";
 
 // export const slider = {
 //   active: "#FFE283",

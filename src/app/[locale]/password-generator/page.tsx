@@ -1,23 +1,16 @@
-import { useTranslations } from "next-intl";
-import usePasswordGenerator from "@/hooks/usePasswordGenerator";
+"use client";
+
 import { formStyle } from "@/app/[locale]/password-generator/page.css";
-import PasswordOutput from "@/app/[locale]/password-generator/_components/PasswordOutput";
-import PasswordOptions from "@/app/[locale]/password-generator/_components/PasswordOptions";
-import Button from "@/components/common/Button";
+import PasswordOptions from "@/components/passwordGenerator/PasswordOptions";
+import PasswordGeneratorButton from "@/components/passwordGenerator/PasswordGeneratorButton";
+import PasswordOutput from "@/components/passwordGenerator/PasswordOutput";
 
 export default function PasswordGeneratorPage() {
-  const t = useTranslations();
-  const { password, generatePassword, passwordOptions, setPasswordOptions } = usePasswordGenerator();
-
-  const _generatePassword = () => generatePassword(passwordOptions);
-
   return (
     <form className={formStyle} onSubmit={e => e.preventDefault()}>
-      <PasswordOptions passwordOptions={passwordOptions} setPasswordOptions={setPasswordOptions} />
-      <Button type="button" onClick={_generatePassword} size={"lg"}>
-        {t("password-generator.button.generate")}
-      </Button>
-      <PasswordOutput password={password} />
+      <PasswordOptions />
+      <PasswordGeneratorButton />
+      <PasswordOutput />
     </form>
   );
 }

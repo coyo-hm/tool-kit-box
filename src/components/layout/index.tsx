@@ -1,9 +1,10 @@
+"use client";
+
 import { PropsWithChildren, useState } from "react";
 import { darkTheme } from "@/styles/theme.css";
 import { contentStyle, layoutStyle, pageStyle } from "@/components/layout/layout.css";
 import Background from "@/components/layout/Background";
 import Nav from "@/components/layout/Nav";
-
 
 // interface Props extends PropsWithChildren{}
 
