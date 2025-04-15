@@ -1,22 +1,24 @@
+"use client";
+
 import { useState } from "react";
-import Button from "@components/common/Button";
-import CopyIcon from "@assets/copy.svg?react";
-import EyeIcon from "@assets/eye.svg?react";
-import EyeClosedIcon from "@assets/eye-closed.svg?react";
+import { usePasswordStore } from "@/stores/passwordGenerator";
+import Input from "@/components/common/Input";
+import Button from "@/components/common/Button";
 import {
+  buttonCopyIconStyle,
   buttonCopyStyle,
   buttonPasswordStyle,
   inputContainerStyle,
   inputStyle,
   outputStyle,
-} from "./passwordOutput.css.ts";
-import { Input } from "@components/common/Input";
+} from "@/components/passwordGenerator/PasswordOutput/passwordOutput.css";
 
-interface Props {
-  password: string;
-}
+import CopyIcon from "@icons/copy.svg";
+import EyeIcon from "@icons/eye.svg";
+import EyeClosedIcon from "@icons/eye-closed.svg";
 
-const PasswordOutput = ({ password }: Props) => {
+const PasswordOutput = () => {
+  const { password } = usePasswordStore(state => state);
   const [showPassword, setShowPassword] = useState(false);
 
   const onCopy = async () => {
@@ -36,7 +38,7 @@ const PasswordOutput = ({ password }: Props) => {
         </button>
       </div>
       <Button onClick={onCopy} className={buttonCopyStyle} color={"secondary"}>
-        <CopyIcon />
+        <CopyIcon className={buttonCopyIconStyle} />
       </Button>
     </div>
   );

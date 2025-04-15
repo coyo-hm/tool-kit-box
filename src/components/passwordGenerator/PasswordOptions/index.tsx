@@ -1,26 +1,26 @@
-import { ChangeEvent, Dispatch, MouseEvent, SetStateAction, useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
-import PasswordGenerator from "@constants/passwordGenerator.ts";
-import { type PasswordOptions } from "@hooks/usePasswordGenerator.ts";
-import Checkbox from "@components/common/Checkbox";
+"use client";
+
+import { MouseEvent, useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
+import PasswordGenerator from "@/constants/passwordGenerator";
+import Input, { SliderInput } from "@/components/common/Input";
+import Checkbox from "@/components/common/Checkbox";
 import {
   checkContainerStyle,
   containerStyle,
   symbolCheckStyle,
   symbolInputStyle,
   titleStyle,
-} from "./passwordOptions.css.ts";
-import { Input, SliderInput } from "@components/common/Input";
+} from "./passwordOptions.css";
+import { usePasswordStore } from "@/stores/passwordGenerator";
 
-interface Props {
-  passwordOptions: PasswordOptions;
-  setPasswordOptions: Dispatch<SetStateAction<PasswordOptions>>;
-}
-
-const PasswordOptions = ({ passwordOptions, setPasswordOptions }: Props) => {
-  const { t } = useTranslation();
-  const { length, includeSymbols, isIncludeNumbers, isIncludeUppercase, isIncludeLowercase, isIncludeSymbols } =
-    passwordOptions;
+const PasswordOptions = () => {
+  const t = useTranslations();
+  const {
+    options: { length, includeSymbols, isIncludeNumbers, isIncludeUppercase, isIncludeLowercase, isIncludeSymbols },
+    actions,
+  } = usePasswordStore(state => state);
+  const { updateSymbols, updateOptions } = actions;
   const [isAllChecked, setIsAllChecked] = useState(false);
 
   useEffect(() => {
@@ -44,24 +44,13 @@ const PasswordOptions = ({ passwordOptions, setPasswordOptions }: Props) => {
 
   const onToggleIsAllChecked = () => {
     const newState = !isAllChecked;
-    setPasswordOptions(prev => ({
-      ...prev,
+    updateOptions({
       isIncludeNumbers: newState,
       isIncludeUppercase: newState,
       isIncludeLowercase: newState,
       isIncludeSymbols: newState,
-    }));
+    });
     setIsAllChecked(newState);
-  };
-
-  const onChangeSymbols = (e: ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setPasswordOptions(prev => ({
-      ...prev,
-      includeSymbols: value
-        .split("")
-        .reduce((letters, l) => (PasswordGenerator.DEFAULT_CHARS.SYMBOL.includes(l) ? letters + l : letters), ""),
-    }));
   };
 
   const onClickCheckbox = (event: MouseEvent<HTMLInputElement>) => {
@@ -70,10 +59,7 @@ const PasswordOptions = ({ passwordOptions, setPasswordOptions }: Props) => {
       return;
     }
 
-    setPasswordOptions(prev => ({
-      ...prev,
-      [target.id]: target.checked,
-    }));
+    updateOptions({ [target.id]: target.checked });
   };
 
   return (
@@ -85,7 +71,7 @@ const PasswordOptions = ({ passwordOptions, setPasswordOptions }: Props) => {
         min={PasswordGenerator.NUMBER.MIN}
         max={PasswordGenerator.NUMBER.MAX}
         value={length}
-        onChange={e => setPasswordOptions(prev => ({ ...prev, length: Number(e.target.value) }))}
+        onChange={e => updateOptions({ length: Number(e.target.value) })}
       />
       <Checkbox
         id={"all-check"}
@@ -120,7 +106,7 @@ const PasswordOptions = ({ passwordOptions, setPasswordOptions }: Props) => {
             checked={isIncludeSymbols}
             onClick={onClickCheckbox}
           />
-          <Input value={includeSymbols} styleSize={"sm"} onChange={onChangeSymbols} className={symbolInputStyle} />
+          <Input value={includeSymbols} styleSize={"sm"} onChange={updateSymbols} className={symbolInputStyle} />
         </div>
       </div>
     </div>

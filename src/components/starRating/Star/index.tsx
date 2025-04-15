@@ -1,4 +1,4 @@
-import StarRating from "@constants/starRating";
+import StarRating from "@/constants/starRating";
 
 interface Props {
   size?: number;

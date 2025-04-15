@@ -1,6 +1,6 @@
 import { ComponentProps, memo, ReactNode, useEffect, useState } from "react";
-import { colorPickerStyle, containerStyle, hexInputStyle } from "./colorInput.css.ts";
-import { Input } from "@components/common/Input";
+import Input from "@/components/common/Input";
+import { colorPickerStyle, containerStyle, hexInputStyle } from "./colorInput.css";
 
 interface ColorInputProps extends ComponentProps<"input"> {
   label?: ReactNode;

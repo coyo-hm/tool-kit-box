@@ -1,5 +1,7 @@
-import Input from "./Input";
+import Input from "./BaseInput/Input";
 import SliderInput from "./SliderInput";
 import ColorInput from "./ColorInput";
 
-export { Input, SliderInput, ColorInput };
+export default Input;
+
+export { SliderInput, ColorInput };

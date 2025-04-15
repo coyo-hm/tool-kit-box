@@ -1,72 +1,13 @@
-import { ChangeEvent, useCallback, useState } from "react";
-import { useTranslation } from "react-i18next";
-import StarRating from "@constants/starRating";
-import { StarRatingOptions } from "@hooks/useStarRating.ts";
-import { ColorInput, SliderInput } from "@components/common/Input";
-import { containerStyle, titleStyle } from "./starOptions.css.ts";
+import { useTranslations } from "next-intl";
+import StarRating from "@/constants/starRating";
+import { ColorInput, SliderInput } from "@/components/common/Input";
+import useStarRatingStore from "@/stores/starRating";
+import { containerStyle, titleStyle } from "./starOptions.css";
 
-interface Props {
-  onChangeStarRatingOptions: (values: Partial<StarRatingOptions>) => void;
-}
-
-const StarOptions = ({ onChangeStarRatingOptions }: Props) => {
-  const { t } = useTranslation();
-
-  const [maxScore, setMaxScore] = useState(StarRating.MAX_SCORE.DEFAULT);
-  const [currentScore, setCurrentScore] = useState(StarRating.CURRENT_SCORE.DEFAULT);
-  const [filledColor, setFilledColor] = useState(StarRating.FILLED_COLOR.DEFAULT);
-  const [unfilledColor, setUnfilledColor] = useState(StarRating.UNFILLED_COLOR.DEFAULT);
-  const [starSize, setStarSize] = useState(StarRating.STAR_SIZE.DEFAULT);
-
-  const onHandleMaxScoreChange = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
-      const value = Number(e.target.value);
-      setMaxScore(value);
-      setCurrentScore(prev => Math.min(prev, value));
-      onChangeStarRatingOptions({ maxScore: value, currentScore: Math.min(currentScore, value) });
-    },
-    [currentScore, onChangeStarRatingOptions],
-  );
-
-  const onHandleCurrentScoreChange = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
-      const value = Number(e.target.value);
-      setCurrentScore(value);
-      onChangeStarRatingOptions({ currentScore: value });
-    },
-    [onChangeStarRatingOptions],
-  );
-
-  const onHandleStarSizeChange = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
-      const value = Number(e.target.value);
-      setStarSize(value);
-      onChangeStarRatingOptions({ starSize: value });
-    },
-    [onChangeStarRatingOptions],
-  );
-
-  const onHandleFilledColorChange = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
-      const value = e.target.value;
-      setFilledColor(value);
-      onChangeStarRatingOptions({
-        filledColor: value,
-      });
-    },
-    [onChangeStarRatingOptions],
-  );
-
-  const onHandleUnfilledColorChange = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
-      const value = e.target.value;
-      setUnfilledColor(value);
-      onChangeStarRatingOptions({
-        unfilledColor: value,
-      });
-    },
-    [onChangeStarRatingOptions],
-  );
+const StarOptions = () => {
+  const t = useTranslations();
+  const { maxScore, currentScore, filledColor, unfilledColor, starSize } = useStarRatingStore(state => state);
+  const { updateMaxScore, updateStarRating } = useStarRatingStore(state => state.actions);
 
   return (
     <div className={containerStyle}>
@@ -77,7 +18,7 @@ const StarOptions = ({ onChangeStarRatingOptions }: Props) => {
         min={StarRating.MAX_SCORE.MIN}
         max={StarRating.MAX_SCORE.MAX}
         value={maxScore}
-        onChange={onHandleMaxScoreChange}
+        onChange={updateMaxScore}
       />
       <SliderInput
         id={"starRatingCurrentScore"}
@@ -86,7 +27,7 @@ const StarOptions = ({ onChangeStarRatingOptions }: Props) => {
         max={maxScore}
         step={StarRating.CURRENT_SCORE.STEP}
         value={currentScore}
-        onChange={onHandleCurrentScoreChange}
+        onChange={e => updateStarRating({ currentScore: Number(e.target.value) })}
       />
       <SliderInput
         id={"starRatingStarSize"}
@@ -94,19 +35,27 @@ const StarOptions = ({ onChangeStarRatingOptions }: Props) => {
         min={StarRating.STAR_SIZE.MIN}
         max={StarRating.STAR_SIZE.MAX}
         value={starSize}
-        onChange={onHandleStarSizeChange}
+        onChange={e => updateStarRating({ starSize: Number(e.target.value) })}
       />
       <ColorInput
         id={"starRatingFilledColor"}
         label={t("star-rating.options.filledColor")}
         value={filledColor}
-        onChange={onHandleFilledColorChange}
+        onChange={e =>
+          updateStarRating({
+            filledColor: e.target.value,
+          })
+        }
       />
       <ColorInput
         id={"starRatingUnfilledColor"}
         label={t("star-rating.options.unfilledColor")}
         value={unfilledColor}
-        onChange={onHandleUnfilledColorChange}
+        onChange={e =>
+          updateStarRating({
+            unfilledColor: e.target.value,
+          })
+        }
       />
     </div>
   );

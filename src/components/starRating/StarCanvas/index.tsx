@@ -1,8 +1,10 @@
-import { StarRatingOptions } from "@hooks/useStarRating.ts";
-import Star from "@components/starRating/Star";
-import { starCanvasStyle } from "./starCanvas.css.ts";
+import useStarRatingStore from "@/stores/starRating";
+import Star from "@/components/starRating/Star";
+import { starCanvasStyle } from "./starCanvas.css";
 
-const StarCanvas = ({ maxScore, currentScore, filledColor, unfilledColor, starSize }: StarRatingOptions) => {
+const StarCanvas = () => {
+  const { maxScore, currentScore, filledColor, unfilledColor, starSize } = useStarRatingStore(state => state);
+
   return (
     <div className={starCanvasStyle}>
       {Array.from({ length: maxScore }, (_, i) => {

@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import vars from "@styles/vars.css.ts";
+import vars from "@/styles/vars.css";
 
 export const outputStyle = style({
   width: "100%",
@@ -19,9 +19,10 @@ export const inputStyle = style({
 export const buttonPasswordStyle = style({
   position: "absolute",
   right: 5,
-  height: "100%",
-  cursor: "pointer",
+  width: "3.125rem",
+  height: "3.125rem",
   padding: "0.5rem",
+  cursor: "pointer",
   backgroundColor: "transparent",
   border: "none",
   color: vars.colors.primaryYellow,

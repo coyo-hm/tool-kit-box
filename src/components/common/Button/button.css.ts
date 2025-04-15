@@ -1,6 +1,6 @@
 import { recipe } from "@vanilla-extract/recipes";
-import { themeContract } from "@styles/theme.css.ts";
-import vars from "@styles/vars.css.ts";
+import { themeContract } from "@/styles/theme.css";
+import vars from "@/styles/vars.css";
 
 export const buttonStyle = recipe({
   base: {

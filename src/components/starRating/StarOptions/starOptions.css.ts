@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import vars from "@styles/vars.css.ts";
+import vars from "@/styles/vars.css";
 
 export const containerStyle = style({
   width: "100%",

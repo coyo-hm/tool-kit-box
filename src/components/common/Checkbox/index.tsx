@@ -1,5 +1,5 @@
 import { ComponentProps, memo, ReactNode } from "react";
-import { containerStyle, iconStyle, inputStyle, labelStyle } from "./checkbox.css.ts";
+import { containerStyle, iconStyle, inputStyle, labelStyle } from "./checkbox.css";
 
 interface CheckBoxProps extends Omit<ComponentProps<"input">, "size"> {
   id: string;

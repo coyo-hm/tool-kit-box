@@ -6,8 +6,8 @@ import {
   sliderTickStyle,
   sliderTrackStyle,
   valueInputStyle,
-} from "./sliderInput.css.ts";
-import { Input } from "@components/common/Input";
+} from "./sliderInput.css";
+import Input from "@/components/common/Input";
 
 interface SliderInputProps extends ComponentProps<"input"> {
   label?: ReactNode;
