@@ -3,6 +3,7 @@
 import { MouseEvent, useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import PasswordGenerator from "@/constants/passwordGenerator";
+import { usePasswordStore } from "@/stores/passwordGenerator";
 import Input, { SliderInput } from "@/components/common/Input";
 import Checkbox from "@/components/common/Checkbox";
 import {
@@ -12,7 +13,7 @@ import {
   symbolInputStyle,
   titleStyle,
 } from "./passwordOptions.css";
-import { usePasswordStore } from "@/stores/passwordGenerator";
+
 
 const PasswordOptions = () => {
   const t = useTranslations();
