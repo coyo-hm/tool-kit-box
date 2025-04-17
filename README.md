@@ -4,8 +4,8 @@ A curated collection of reusable components and utilities built with Next.js and
 development workflows.
 
 ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Next.js](https://img.shields.io/badge/Next.js-13.4.0-black?logo=next.js)
-![TypeScript](https://img.shields.io/badge/TypeScript-4.9-blue?logo=typescript)
+![Next.js](https://img.shields.io/badge/Next.js-15.2.3-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
 ![vanilla-extract](https://img.shields.io/badge/vanilla--extract-%23DDC500?style=flat&logo=css3&logoColor=black)
 ![Zustand](https://img.shields.io/badge/Zustand-%23FFDD57?style=flat&logo=react&logoColor=black)
 
