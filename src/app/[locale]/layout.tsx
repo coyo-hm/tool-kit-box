@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
-import Providers from "@/providers";
+import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
-import { notFound } from "next/navigation";
+import Providers from "@/providers";
 import Layout from "@/components/layout";
 
 export default async function LocaleLayout({

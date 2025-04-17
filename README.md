@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# [Tool Kit Box](https://tool-kit-box.vercel.app/en)
 
-## Getting Started
+A curated collection of reusable components and utilities built with Next.js and TypeScript, designed to accelerate web
+development workflows.
 
-First, run the development server:
+![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Next.js](https://img.shields.io/badge/Next.js-13.4.0-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-4.9-blue?logo=typescript)
+![vanilla-extract](https://img.shields.io/badge/vanilla--extract-%23DDC500?style=flat&logo=css3&logoColor=black)
+![Zustand](https://img.shields.io/badge/Zustand-%23FFDD57?style=flat&logo=react&logoColor=black)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Overview
+
+**Tool Kit Box** serves as a centralized repository for modular components, hooks, and utilities commonly used across
+various projects. By consolidating these tools, developers can maintain consistency and improve productivity in their
+development processes.
+
+---
+
+## 🛠 Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [vanilla-extract](https://vanilla-extract.style/) – zero-runtime, type-safe CSS
+- **State Management:** [Zustand](https://zustand-demo.pmnd.rs/) – minimal, scalable global state
+- **Package Manager:** [Yarn](https://yarnpkg.com/)
+- **Linting & Formatting:** ESLint, Prettier
+- **Commit Hooks:** Husky
+
+---
+
+## 📦 Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/coyo-hm/tool-kit-box.git
+   cd tool-kit-box
+   ```
+2. **Install dependencies:**
+
+    ```bash
+    yarn install
+    ```
+
+## 📁 Project Structure
+```plaintext
+tool-kit-box/ 
+├── public/ # Static assets
+├── src/ 
+│ ├── app/ # Next.js App Router (pages, layouts, etc.) 
+│ ├── components/ # Reusable UI components 
+│ ├── constants/ # Reusable constants 
+│ ├── hooks/ # Custom React hooks 
+│ ├── i18n/ # Next-intl config 
+│ ├── providers/ # Next-intl config 
+│ ├── stores/ # Zustand global state stores 
+│ ├── utils/ # Utility functions 
+│ └── styles/ # Global styles & vanilla-extract config 
+├── eslint.config.mjs 
+├── tsconfig.json
+└── next.config.ts
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌐 Live Demo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Check out the live application at: [tool-kit-box.vercel.app](https://tool-kit-box.vercel.app/en)
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## 📬 Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Feel free to fork the repo and submit pull requests for any improvements or new tools/components you'd like to add.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+If you encounter any bugs, have feature requests, or want to discuss improvements, **please open an issue** — your feedback is always welcome!
