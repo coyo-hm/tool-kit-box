@@ -13,4 +13,19 @@ export const whFull = style({
   height: "100%",
 });
 
+export const flexColCenter = style({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "stretch",
+  justifyContent: "center",
+});
+
+export const pageContainer = style([
+  flexColCenter,
+  {
+    padding: "2rem",
+    gap: "2rem",
+  },
+]);
+
 export default vars;

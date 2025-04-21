@@ -39,37 +39,37 @@ development processes.
    git clone https://github.com/coyo-hm/tool-kit-box.git
    cd tool-kit-box
    ```
+
 2. **Install dependencies:**
 
-    ```bash
-    yarn install
-    ```
+   ```bash
+   yarn install
+   ```
 
 ## 📁 Project Structure
+
 ```plaintext
-tool-kit-box/ 
+tool-kit-box/
 ├── public/ # Static assets
-├── src/ 
-│ ├── app/ # Next.js App Router (pages, layouts, etc.) 
-│ ├── components/ # Reusable UI components 
-│ ├── constants/ # Reusable constants 
-│ ├── hooks/ # Custom React hooks 
-│ ├── i18n/ # Next-intl config 
-│ ├── providers/ # Next-intl config 
-│ ├── stores/ # Zustand global state stores 
-│ ├── utils/ # Utility functions 
-│ └── styles/ # Global styles & vanilla-extract config 
-├── eslint.config.mjs 
+├── src/
+│ ├── app/ # Next.js App Router (pages, layouts, etc.)
+│ ├── components/ # Reusable UI components
+│ ├── constants/ # Reusable constants
+│ ├── hooks/ # Custom React hooks
+│ ├── i18n/ # Next-intl config
+│ ├── providers/ # Next-intl config
+│ ├── stores/ # Zustand global state stores
+│ ├── utils/ # Utility functions
+│ └── styles/ # Global styles & vanilla-extract config
+├── eslint.config.mjs
 ├── tsconfig.json
 └── next.config.ts
 
 ```
 
-
 ## 🌐 Live Demo
 
 Check out the live application at: [tool-kit-box.vercel.app](https://tool-kit-box.vercel.app/en)
-
 
 ## 📬 Contributing
 

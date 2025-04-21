@@ -44,7 +44,7 @@ const SliderInput = memo(({ className = "", label, id, isShowValue = true, step,
           ))}
         </ul>
       </div>
-      {isShowValue && <Input value={props.value} disabled className={valueInputStyle} />}
+      {isShowValue && <Input value={props.value} disabled className={valueInputStyle} width={"wAuto"} />}
     </div>
   );
 });
