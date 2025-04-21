@@ -21,5 +21,11 @@
     "button": {
       "download": "⬇\uFE0F PNG 다운로드"
     }
+  },
+  "color-picker": {
+    "title": "\uD83D\uDD8C\uFE0F SCREEN COLOR PICKER \uD83D\uDD8C\uFE0F",
+    "button": {
+      "starPick": "색상 선택"
+    }
   }
 }

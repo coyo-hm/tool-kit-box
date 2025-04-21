@@ -27,5 +27,11 @@
     "button": {
       "download": "⬇\uFE0F PNG DOWNLOAD"
     }
+  },
+  "color-picker": {
+    "title": "\uD83D\uDD8C\uFE0F SCREEN COLOR PICKER \uD83D\uDD8C\uFE0F",
+    "button": {
+      "starPick": "PICK COLOR"
+    }
   }
 }

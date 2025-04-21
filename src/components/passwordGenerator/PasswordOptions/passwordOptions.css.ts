@@ -36,6 +36,5 @@ export const symbolCheckStyle = style({
 });
 
 export const symbolInputStyle = style({
-  width: "100%",
   flex: "1 1 0",
 });

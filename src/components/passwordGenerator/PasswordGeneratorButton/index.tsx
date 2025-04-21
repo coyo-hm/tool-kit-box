@@ -7,7 +7,7 @@ const PasswordGeneratorButton = () => {
   const { generatePassword } = usePasswordStore(state => state.actions);
 
   return (
-    <Button type="button" onClick={generatePassword} size={"lg"}>
+    <Button onClick={generatePassword} size={"lg"}>
       {t("password-generator.button.generate")}
     </Button>
   );

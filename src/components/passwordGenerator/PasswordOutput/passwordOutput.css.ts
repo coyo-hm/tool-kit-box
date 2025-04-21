@@ -33,17 +33,3 @@ export const buttonPasswordStyle = style({
     },
   },
 });
-
-export const buttonCopyStyle = style({
-  height: "3.125rem",
-  width: "3.125rem",
-});
-
-export const buttonCopyIconStyle = style({
-  color: "white",
-  selectors: {
-    [`${buttonCopyStyle}:hover &`]: {
-      color: "black",
-    },
-  },
-});

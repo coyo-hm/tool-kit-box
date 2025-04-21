@@ -14,7 +14,6 @@ import {
   titleStyle,
 } from "./passwordOptions.css";
 
-
 const PasswordOptions = () => {
   const t = useTranslations();
   const {
@@ -107,7 +106,12 @@ const PasswordOptions = () => {
             checked={isIncludeSymbols}
             onClick={onClickCheckbox}
           />
-          <Input value={includeSymbols} styleSize={"sm"} onChange={updateSymbols} className={symbolInputStyle} />
+          <Input
+            value={includeSymbols}
+            styleSize={"sm"}
+            onChange={updateSymbols}
+            containerClassName={symbolInputStyle}
+          />
         </div>
       </div>
     </div>
