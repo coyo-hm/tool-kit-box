@@ -15,6 +15,7 @@
     "@tanstack/react-query-devtools": "^5.69.0",
     "@vanilla-extract/css": "^1.17.1",
     "@vanilla-extract/recipes": "^0.5.5",
+    "@vercel/speed-insights": "^1.2.0",
     "html-to-image": "^1.11.13",
     "next": "15.2.3",
     "next-intl": "^4.0.2",
