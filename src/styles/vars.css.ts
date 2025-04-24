@@ -36,7 +36,6 @@ export const whFull = style({
 export const flex = styleVariants({
   row: {
     display: "flex",
-    flexDirection: "row",
   },
   col: {
     display: "flex",
@@ -45,7 +44,7 @@ export const flex = styleVariants({
   },
   rowCenter: {
     display: "flex",
-    flexDirection: "row",
+    // flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
   }

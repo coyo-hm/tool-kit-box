@@ -17,8 +17,8 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html lang={"en"}>
-      {/*<html lang={locale}>*/}
+    // <html lang={"en"}>
+      <html lang={locale}>
       <body>
         <Providers>
           <Layout>{children}</Layout>

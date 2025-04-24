@@ -1,16 +1,16 @@
 import { style } from "@vanilla-extract/css";
-import vars from "@/styles/vars.css";
+import vars, { boxStyle, w } from "@/styles/vars.css";
 
-export const containerStyle = style({
-  width: "100%",
-  padding: "2rem",
-  borderRadius: vars.borderRadius,
-  backgroundColor: "rgba(0, 0, 0, 0.6)",
-  fontSize: "1.5rem",
-  fontWeight: 700,
-  display: "flex",
-  gap: "1.5rem",
-});
+export const containerStyle = style([
+  boxStyle,
+  w["full"],
+  {
+    fontSize: "1.5rem",
+    fontWeight: 700,
+    display: "flex",
+    gap: "1.5rem",
+  },
+]);
 
 export const previewStyle = style({
   width: "11.375rem",
