@@ -1,17 +1,16 @@
 import { style } from "@vanilla-extract/css";
-import vars from "@/styles/vars.css";
+import { boxStyle, flexColCenterStyle, w } from "@/styles/vars.css";
 
-export const containerStyle = style({
-  width: "100%",
-  padding: "2rem",
-  borderRadius: vars.borderRadius,
-  backgroundColor: "rgba(0, 0, 0, 0.6)",
-  fontSize: "1.5rem",
-  fontWeight: 700,
-  display: "flex",
-  flexDirection: "column",
-  gap: "1rem",
-});
+export const containerStyle = style([
+  boxStyle,
+  w["full"],
+  flexColCenterStyle,
+  {
+    fontSize: "1.5rem",
+    fontWeight: 700,
+    gap: "1rem",
+  },
+]);
 
 export const titleStyle = style({
   margin: "-3rem 0 0",

@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { notFound } from "next/navigation";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import Providers from "@/providers";
@@ -16,12 +17,13 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html lang={"en"}>
-      {/*<html lang={locale}>*/}
+    // <html lang={"en"}>
+      <html lang={locale}>
       <body>
         <Providers>
           <Layout>{children}</Layout>
         </Providers>
+        <SpeedInsights />
       </body>
     </html>
   );

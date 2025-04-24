@@ -1,3 +1,5 @@
+"use client";
+
 import { ComponentProps, memo, ReactNode, useEffect, useState } from "react";
 import Input from "@/components/common/Input";
 import { colorPickerStyle, containerStyle, hexInputStyle } from "./colorInput.css";

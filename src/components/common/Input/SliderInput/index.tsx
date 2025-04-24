@@ -1,3 +1,5 @@
+"use client";
+
 import { ComponentProps, memo, ReactNode, useRef } from "react";
 import {
   inputStyle,

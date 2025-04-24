@@ -2,10 +2,16 @@
   "password-generator": {
     "title": "\uD83D\uDD12 PASSWORD GENERATOR \uD83D\uDD12",
     "form": {
-      "option": "옵션",
+      "option": "비밀번호 옵션",
       "length": "비밀번호 길이",
-      "included_char": "포함되는 글자",
-      "special_char": "특수문자"
+      "included_char": "포함되는 문자",
+      "is_included_num": "숫자 포함",
+      "is_included_upper": "대문자 포함",
+      "is_included_lower": "소문자 포함",
+      "is_included_sym": "특수문자 포함"
+    },
+    "button": {
+      "generate": "비밀번호 생성"
     }
   },
   "star-rating": {
@@ -27,5 +33,8 @@
     "button": {
       "starPick": "색상 선택"
     }
+  },
+  "date-counter": {
+    "title": "\uD83D\uDDD3\uFE0F D-DAY COUNTER \uD83D\uDDD3\uFE0F"
   }
 }
