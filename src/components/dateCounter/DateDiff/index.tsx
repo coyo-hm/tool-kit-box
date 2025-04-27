@@ -21,7 +21,10 @@ const DateDiff = () => {
     <div className={containerStyle}>
       <div className={textStyle.date}>
         <span>DATE</span>
-        <span className={`${numberStyle.date} ${numberColorStyle[numberColor]}`}>{numberColor === "past" ? "+" : ""}{date}</span>
+        <span className={`${numberStyle.date} ${numberColorStyle[numberColor]}`}>
+          {numberColor === "past" ? "+" : ""}
+          {date}
+        </span>
       </div>
       <div className={textStyle.month}>
         <span>MONTH</span>

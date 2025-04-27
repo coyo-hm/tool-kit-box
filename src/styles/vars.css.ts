@@ -47,7 +47,7 @@ export const flex = styleVariants({
     // flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-  }
+  },
 });
 
 export const flexColCenterStyle = style({
