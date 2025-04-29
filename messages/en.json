@@ -1,4 +1,9 @@
 {
+  "common": {
+    "toast": {
+      "copy_success": "Copied to Clipboard."
+    }
+  },
   "password-generator": {
     "title": "\uD83D\uDD12 PASSWORD GENERATOR \uD83D\uDD12",
     "form": {

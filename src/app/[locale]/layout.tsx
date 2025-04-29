@@ -5,6 +5,7 @@ import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 import Providers from "@/providers";
 import Layout from "@/components/layout";
+import ToastMessageList from "@/components/common/ToastMessage/ToastMessageList";
 
 export default async function LocaleLayout({
   children,
@@ -22,6 +23,7 @@ export default async function LocaleLayout({
       <body>
         <Providers>
           <Layout>{children}</Layout>
+          <ToastMessageList />
         </Providers>
         <SpeedInsights />
       </body>

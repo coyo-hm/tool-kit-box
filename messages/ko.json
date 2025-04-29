@@ -1,4 +1,9 @@
 {
+  "common": {
+    "toast": {
+      "copy_success": "클립보드에 복사되었습니다."
+    }
+  },
   "password-generator": {
     "title": "\uD83D\uDD12 PASSWORD GENERATOR \uD83D\uDD12",
     "form": {
