@@ -2,7 +2,7 @@ import { style, styleVariants } from "@vanilla-extract/css";
 import vars, { boxStyle, flex } from "@/styles/vars.css";
 
 export const containerStyle = style([
-  boxStyle,
+  boxStyle.black,
   {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",

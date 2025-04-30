@@ -37,6 +37,12 @@
     "title": "\uD83D\uDD8C\uFE0F SCREEN COLOR PICKER \uD83D\uDD8C\uFE0F",
     "button": {
       "starPick": "색상 선택"
+    },
+    "notice": {
+      "chrome": "⚠\uFE0F 해당 기능은 크롬 브라우저에서만 이용하실 수 있습니다."
+    },
+    "toast": {
+      "pick_failed": "색상 선택이 취소되었습니다."
     }
   },
   "date-counter": {
