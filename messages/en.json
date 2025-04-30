@@ -1,4 +1,9 @@
 {
+  "common": {
+    "toast": {
+      "copy_success": "Copied to Clipboard."
+    }
+  },
   "password-generator": {
     "title": "\uD83D\uDD12 PASSWORD GENERATOR \uD83D\uDD12",
     "form": {
@@ -32,6 +37,12 @@
     "title": "\uD83D\uDD8C\uFE0F SCREEN COLOR PICKER \uD83D\uDD8C\uFE0F",
     "button": {
       "starPick": "PICK COLOR"
+    },
+    "notice": {
+      "chrome": "⚠\uFE0F This Feature is only available in the Chrome browser."
+    },
+    "toast": {
+      "pick_failed": "Color picking cancelled."
     }
   },
   "date-counter": {

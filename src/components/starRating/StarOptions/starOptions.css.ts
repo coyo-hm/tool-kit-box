@@ -2,7 +2,7 @@ import { style } from "@vanilla-extract/css";
 import { boxStyle, flexColCenterStyle, w } from "@/styles/vars.css";
 
 export const containerStyle = style([
-  boxStyle,
+  boxStyle.black,
   w["full"],
   flexColCenterStyle,
   {

@@ -1,11 +1,14 @@
 import { PropsWithChildren } from "react";
-import ThemeProvider from "@/providers/ThemeProvider";
 import IntlProvider from "@/providers/IntlProvider";
+import ThemeProvider from "@/providers/ThemeProvider";
+import ToastMessageProvider from "@/providers/ToastMessageProvider";
 
 export default function Providers({ children }: PropsWithChildren) {
   return (
     <IntlProvider>
-      <ThemeProvider>{children}</ThemeProvider>
+      <ThemeProvider>
+        <ToastMessageProvider>{children}</ToastMessageProvider>
+      </ThemeProvider>
     </IntlProvider>
   );
 }

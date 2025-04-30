@@ -47,7 +47,7 @@ export const flex = styleVariants({
     // flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-  }
+  },
 });
 
 export const flexColCenterStyle = style({
@@ -64,10 +64,25 @@ export const pageContainer = style([
   },
 ]);
 
-export const boxStyle = style({
+const boxBaseStyle = style({
   padding: "2rem",
   borderRadius: vars.borderRadius,
-  backgroundColor: "rgba(0, 0, 0, 0.6)",
+});
+
+export const boxStyle = styleVariants({
+  black: [
+    boxBaseStyle,
+    {
+      backgroundColor: "rgba(0, 0, 0, 0.6)",
+    },
+  ],
+  yellow: [
+    boxBaseStyle,
+    {
+      border: `3px solid ${vars.colors.primaryYellow}`,
+      backgroundColor: "rgba(255, 200, 51, 0.1)",
+    },
+  ],
 });
 
 export default vars;

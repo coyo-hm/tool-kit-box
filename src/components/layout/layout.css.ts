@@ -69,3 +69,21 @@ export const navStyle = style({
   display: "flex",
   gap: "0.5rem",
 });
+
+export const footerStyle = style({
+  flex: "0 0 1",
+  zIndex: 1,
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  padding: "2rem",
+  gap: "1rem",
+  lineHeight: 1,
+});
+
+export const footerLinkStyle = style({
+  width: "2rem",
+  height: "2rem",
+  display: "block",
+  color: "white",
+});

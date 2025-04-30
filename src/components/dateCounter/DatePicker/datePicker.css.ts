@@ -2,7 +2,7 @@ import { style } from "@vanilla-extract/css";
 import { boxStyle } from "@/styles/vars.css";
 
 export const formStyle = style([
-  boxStyle,
+  boxStyle.black,
   {
     display: "flex",
     flexWrap: "wrap",
