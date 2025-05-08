@@ -30,3 +30,11 @@ globalStyle("svg *, svg", {
   color: "inherit",
   // background: themeContract.colors.background,
 });
+
+globalStyle("html", {
+  "@media": {
+    "screen and (max-width: 576px)": {
+      fontSize: "8px",
+    },
+  },
+});
