@@ -2,7 +2,7 @@ import { keyframes, style } from "@vanilla-extract/css";
 
 export const layoutStyle = style({
   width: "100%",
-  height: "100vh",
+  height: "100dvh",
   overflow: "auto",
 });
 
