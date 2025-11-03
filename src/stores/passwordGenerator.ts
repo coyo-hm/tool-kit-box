@@ -39,19 +39,55 @@ export const usePasswordStore = create<State & Actions>((set, get) => ({
       const { length, isIncludeNumbers, isIncludeSymbols, isIncludeUppercase, isIncludeLowercase, includeSymbols } =
         get().options;
       let charPool = "";
+      const guaranteedChars = [];
 
-      if (isIncludeNumbers) charPool += PasswordGenerator.DEFAULT_CHARS.NUMBER;
-      if (isIncludeSymbols) charPool += includeSymbols;
-      if (isIncludeUppercase) charPool += PasswordGenerator.DEFAULT_CHARS.UPPERCASE;
-      if (isIncludeLowercase) charPool += PasswordGenerator.DEFAULT_CHARS.LOWERCASE;
+      if (isIncludeNumbers) {
+        charPool += PasswordGenerator.DEFAULT_CHARS.NUMBER;
+        guaranteedChars.push(
+          PasswordGenerator.DEFAULT_CHARS.NUMBER[
+            Math.floor(Math.random() * PasswordGenerator.DEFAULT_CHARS.NUMBER.length)
+          ],
+        );
+      }
+      if (isIncludeSymbols && includeSymbols) {
+        charPool += includeSymbols;
+        guaranteedChars.push(includeSymbols[Math.floor(Math.random() * includeSymbols.length)]);
+      }
+      if (isIncludeUppercase) {
+        charPool += PasswordGenerator.DEFAULT_CHARS.UPPERCASE;
+        guaranteedChars.push(
+          PasswordGenerator.DEFAULT_CHARS.UPPERCASE[
+            Math.floor(Math.random() * PasswordGenerator.DEFAULT_CHARS.UPPERCASE.length)
+          ],
+        );
+      }
+      if (isIncludeLowercase) {
+        charPool += PasswordGenerator.DEFAULT_CHARS.LOWERCASE;
+        guaranteedChars.push(
+          PasswordGenerator.DEFAULT_CHARS.LOWERCASE[
+            Math.floor(Math.random() * PasswordGenerator.DEFAULT_CHARS.LOWERCASE.length)
+          ],
+        );
+      }
 
-      if (!charPool) return;
+      if (!charPool) {
+        set({ password: "" });
+        return;
+      }
 
-      const generatedPassword = Array.from(
-        { length },
+      const remainingLength = length - guaranteedChars.length;
+      const remainingChars = Array.from(
+        { length: remainingLength },
         () => charPool[Math.floor(Math.random() * charPool.length)],
-      ).join("");
+      );
 
+      const passwordChars = [...guaranteedChars, ...remainingChars];
+      for (let i = passwordChars.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [passwordChars[i], passwordChars[j]] = [passwordChars[j], passwordChars[i]]; // Swap
+      }
+
+      const generatedPassword = passwordChars.join("");
       set({ password: generatedPassword });
     },
     updateOptions: (options: Partial<PasswordOptions>) => {
