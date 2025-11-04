@@ -4,6 +4,7 @@ const vars = createGlobalTheme(":root", {
   colors: {
     primaryYellow: "#FFC833",
     primaryGreen: "#2CAB0C",
+    primaryGray: "#a6a6a6",
   },
   borderRadius: "0.5rem",
 });
@@ -81,6 +82,13 @@ export const boxStyle = styleVariants({
     {
       border: `3px solid ${vars.colors.primaryYellow}`,
       backgroundColor: "rgba(255, 200, 51, 0.1)",
+    },
+  ],
+  white: [
+    boxBaseStyle,
+    {
+      // border: `3px solid ${vars.colors.primaryGray}`,
+      backgroundColor: "rgba(255, 255, 255, 1)",
     },
   ],
 });

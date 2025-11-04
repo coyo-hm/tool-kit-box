@@ -47,5 +47,17 @@
   },
   "date-counter": {
     "title": "\uD83D\uDDD3\uFE0F D-DAY COUNTER \uD83D\uDDD3\uFE0F"
+  },
+  "box-shadow-generator": {
+    "title": "\uD83D\uDD8D\uFE0F BOX-SHADOW CSS GENERATOR \uD83D\uDD8D\uFE0F",
+    "options": {
+      "title": "option",
+      "offsetX": "Offset X",
+      "offsetY": "Offset Y",
+      "spreadRadius": "Spread Radius",
+      "blurRadius": "Blur Radius",
+      "color": "Color",
+      "isInset": "Use Inset"
+    }
   }
 }
