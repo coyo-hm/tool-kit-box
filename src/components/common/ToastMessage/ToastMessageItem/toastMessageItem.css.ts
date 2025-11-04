@@ -15,7 +15,7 @@ const baseStyle = style({
   padding: "0.5rem 0.5rem 0.5rem 1rem",
   animation: `${slideInFrames} 0.3s ease-out forwards`,
   color: "#ffffff",
-  fontSize: "1.2rem",
+  fontSize: "0.8rem",
 });
 
 export const toastMessageItemStyle = styleVariants({
