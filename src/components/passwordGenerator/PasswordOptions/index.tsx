@@ -83,26 +83,58 @@ const PasswordOptions = () => {
       <div className={checkContainerStyle}>
         <Checkbox
           id={"isIncludeNumbers"}
-          label={t("password-generator.form.is_included_num")}
+          label={
+            <span
+              style={{
+                color: "#10b981",
+              }}
+            >
+              {t("password-generator.form.is_included_num")}
+            </span>
+          }
           checked={isIncludeNumbers}
           onClick={onClickCheckbox}
         />
         <Checkbox
           id={"isIncludeUppercase"}
-          label={t("password-generator.form.is_included_upper")}
+          label={
+            <span
+              style={{
+                color: "#ef4444",
+              }}
+            >
+              {t("password-generator.form.is_included_upper")}
+            </span>
+          }
           checked={isIncludeUppercase}
           onClick={onClickCheckbox}
         />
         <Checkbox
           id={"isIncludeLowercase"}
-          label={t("password-generator.form.is_included_lower")}
+          label={
+            <span
+              style={{
+                color: "#3b82f6",
+              }}
+            >
+              {t("password-generator.form.is_included_lower")}
+            </span>
+          }
           checked={isIncludeLowercase}
           onClick={onClickCheckbox}
         />
         <div className={symbolCheckStyle}>
           <Checkbox
             id={"isIncludeSymbols"}
-            label={t("password-generator.form.is_included_sym")}
+            label={
+              <span
+                style={{
+                  color: "#8b5cf6",
+                }}
+              >
+                {t("password-generator.form.is_included_sym")}
+              </span>
+            }
             checked={isIncludeSymbols}
             onClick={onClickCheckbox}
           />
