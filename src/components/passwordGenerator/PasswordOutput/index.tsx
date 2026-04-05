@@ -55,7 +55,7 @@ const PasswordOutput = () => {
         <Input
           value={password}
           readOnly={true}
-          className={`${styles.inputStyle} ${showPassword ? styles.transparentInputStyle:""}`}
+          className={`${styles.inputStyle} ${showPassword ? styles.transparentInputStyle : ""}`}
           type={showPassword ? "text" : "password"}
           rightIcon={
             <button className={styles.buttonPasswordStyle} onClick={() => setShowPassword(prev => !prev)}>

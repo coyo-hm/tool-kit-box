@@ -25,7 +25,7 @@ export const transparentInputStyle = style({
 });
 
 export const buttonPasswordStyle = style({
-  zIndex:2,
+  zIndex: 2,
   position: "absolute",
   right: 5,
   width: "3.125rem",

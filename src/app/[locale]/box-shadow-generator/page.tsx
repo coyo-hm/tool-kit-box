@@ -5,8 +5,8 @@ import ShadowPreview from "@/components/boxShadowGenerator/ShadowPreview";
 export default function BoxShadowGeneratorPage() {
   return (
     <div className={pageContainer}>
-      <ShadowPreview/>
-      <ShadowOptions/>
+      <ShadowPreview />
+      <ShadowOptions />
     </div>
   );
 }

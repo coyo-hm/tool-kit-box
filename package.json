@@ -19,6 +19,7 @@
     "html-to-image": "^1.11.13",
     "next": "15.2.6",
     "next-intl": "^4.0.2",
+    "qrcode.react": "^4.2.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "zustand": "^5.0.8"

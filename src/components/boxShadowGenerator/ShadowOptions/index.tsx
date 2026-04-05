@@ -104,9 +104,8 @@ const ShadowOptions = () => {
       </div>
       <div className={codeContainerStyle}>
         <pre className={codeTextStyle}>box-shadow: {cssString}</pre>
-        <CopyButton onCopy={onCopy} className={copyButtonStyle}/>
+        <CopyButton onCopy={onCopy} className={copyButtonStyle} />
       </div>
-
     </>
   );
 };

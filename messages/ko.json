@@ -59,5 +59,19 @@
       "color": "Color",
       "isInset": "Inset 적용"
     }
+  },
+  "qr-generator": {
+    "title": "QR 생성기",
+    "options": {
+      "title": "QR 옵션",
+      "url": "링크 URL",
+      "size": "크기",
+      "qr_color": "QR 색상",
+      "bg_color": "배경 색상",
+      "is_included_margin": "여백 포함"
+    },
+    "buttons": {
+      "save_as_png": "PNG로 저장하기"
+    }
   }
 }

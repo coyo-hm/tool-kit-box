@@ -19,7 +19,7 @@ interface Action {
   };
 }
 
-export const useShadowStore = create<State & Action>((set) => ({
+export const useShadowStore = create<State & Action>(set => ({
   options: {
     offsetX: 10,
     offsetY: 10,
@@ -29,8 +29,8 @@ export const useShadowStore = create<State & Action>((set) => ({
     isInset: false,
   },
   actions: {
-    updateOptions: (newOptions) =>
-      set((state) => ({
+    updateOptions: newOptions =>
+      set(state => ({
         options: { ...state.options, ...newOptions },
       })),
   },

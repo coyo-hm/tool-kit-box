@@ -59,5 +59,19 @@
       "color": "Color",
       "isInset": "Use Inset"
     }
+  },
+  "qr-generator": {
+    "title": "QR Generator",
+    "options": {
+      "title": "QR Options",
+      "url": "URL",
+      "size": "Size",
+      "qr_color": "QR color",
+      "bg_color": "Background color",
+      "is_included_margin": "Include margin"
+    },
+    "buttons": {
+      "save_as_png": "Save as PNG"
+    }
   }
 }

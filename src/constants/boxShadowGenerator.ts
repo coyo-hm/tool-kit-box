@@ -4,9 +4,9 @@ export default {
     MAX: 50,
     DEFAULT: 10,
   },
-  BLUR_RADIUS:{
+  BLUR_RADIUS: {
     MIN: -50,
     MAX: 50,
     DEFAULT: 5,
-  }
+  },
 };
